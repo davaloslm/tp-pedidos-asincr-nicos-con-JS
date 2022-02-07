@@ -52,6 +52,11 @@ window.onload = () => {
       card.appendChild(button);
       button.setAttribute("id", movie.id)
 
+      if(JSON.parse(localStorage.getItem('favoritas')).find(favorita => favorita.id === movie.id)) {
+        button.style.backgroundImage = 'none'
+        button.style.backgroundColor = 'gray'
+      }
+
       //Al presionar el botón, la película se agrega o se quita de localStorage
       button.addEventListener("click", e=>{
 
